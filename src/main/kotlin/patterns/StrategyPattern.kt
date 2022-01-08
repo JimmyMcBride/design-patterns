@@ -7,7 +7,7 @@ package patterns
 
 data class Character(
     val name: String,
-    val power_level: Int
+    val powerLevel: Int
 )
 
 data class Item(

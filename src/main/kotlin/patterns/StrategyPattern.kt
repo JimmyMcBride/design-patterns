@@ -1,7 +1,8 @@
 package patterns
 
 /**
- *
+ * Strategy pattern enables a client code to choose from a family of related but different algorithms and gives it a
+ * simple way to choose any of the algorithm in runtime depending on the client context.
  */
 
 data class Character(
@@ -21,6 +22,7 @@ data class Item(
     }
 }
 
+// We want our weight modifier to run different algorithms based on context passed by the client
 data class Inventory(
     val character: Character,
     val allItems: List<Item>,
@@ -31,10 +33,12 @@ data class Inventory(
 
 }
 
+// This is our strategy interface
 interface WeightModifier {
     fun modifiedWeight(itemList: List<Item>): Double
 }
 
+// This is a context for our strategy
 class FeatherWeight : WeightModifier {
     override fun modifiedWeight(itemList: List<Item>): Double {
         val originalWeight = itemList.sumOf { it.weight }
@@ -43,6 +47,7 @@ class FeatherWeight : WeightModifier {
 
 }
 
+// This is a context for our strategy
 class HeavyWeight : WeightModifier {
     override fun modifiedWeight(itemList: List<Item>): Double {
         val originalWeight = itemList.sumOf { it.weight }

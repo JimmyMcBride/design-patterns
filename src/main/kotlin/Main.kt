@@ -1,5 +1,7 @@
-import patterns.display
+import patterns.displayBuilderPattern
+import patterns.displayStrategyPattern
 
 fun main() {
-    display()
+//    displayStrategyPattern()
+    displayBuilderPattern()
 }

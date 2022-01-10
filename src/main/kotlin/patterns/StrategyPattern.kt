@@ -56,7 +56,7 @@ class HeavyWeight : WeightModifier {
 
 }
 
-fun display() {
+fun displayStrategyPattern() {
     val daemon = Character(
         "Daemon",
         10

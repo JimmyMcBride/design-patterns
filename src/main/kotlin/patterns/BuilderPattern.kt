@@ -31,3 +31,9 @@ class MainCharacter private constructor(
     }
 }
 
+fun displayBuilderPattern() {
+    val myCharacter = MainCharacter.Builder("Jimmy").setMaxHealth(200).setMaxStamina(150).build()
+    println("Max health for ${myCharacter?.name}: ${myCharacter?.maxHealth}")
+    println("Max stamina for ${myCharacter?.name}: ${myCharacter?.maxStamina}")
+}
+
